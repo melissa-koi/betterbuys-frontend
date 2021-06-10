@@ -7,11 +7,15 @@ import { BuysComponent } from './components/buys/buys.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DetailComponent } from './components/detail/detail.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BuysComponent
+    BuysComponent,
+    DetailComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
