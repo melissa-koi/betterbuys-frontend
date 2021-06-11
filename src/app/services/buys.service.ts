@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { Buys  } from 'src/app/interfaces/buys';
 
 const all_products = "https://m-betterbuys.herokuapp.com/api/products/"
-const update_bus = "https://m-betterbuys.herokuapp.com/api/products/update/"
-const delete_bus = "https://m-betterbuys.herokuapp.com/api/products/delete/"
+const update_products = "https://m-betterbuys.herokuapp.com/api/products/update/"
+const delete_products = "https://m-betterbuys.herokuapp.com/api/products/delete/"
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,7 @@ export class BuysService {
     return this.http.get(all_products)
   }
 
-
-
-
+  delete(id: any){
+    return this.http.delete(`${delete_products}${id}/`)
+  }
 }

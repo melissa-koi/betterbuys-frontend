@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Detail  } from 'src/app/interfaces/detail';
 import { DetailService  } from '../../services/detail.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Buys  } from 'src/app/interfaces/buys';
+import { BuysService  } from '../../services/buys.service';
 
 
 @Component({
@@ -11,40 +13,28 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
 
-  detail: Detail = {
+  buy: Buys = {
     title: '',
     image: '',
-    description: '',
+    short_description: '',
     quantity: '',
     price: ''
   }
+  submitted = false;
 
-  details : any;
 
-  constructor(private dservice: DetailService, private route: ActivatedRoute,) { }
+  totalBuys : any;
+
+  constructor(private dservice: DetailService, private activatedroute: ActivatedRoute, private bservice: BuysService,) { }
 
   ngOnInit(): void {
-    this.getDetail(this.route.snapshot.paramMap.get('id'));
+    this.AllBuys()
   }
 
-  getDetail(id: string | null) {
-    this.dservice.getById(id)
-      .subscribe(
-        data => {
-          this.details = data;
-          console.log(data);
-        },
-        error => {
-          console.log(error);
-        });
-  }
+  AllBuys() {
+    this.bservice.getAllProducts().subscribe(data => {this.totalBuys = data; console.log(this.totalBuys); }, error => {console.log(error);})}
 
-  addCart() {
-    const data = {
-      title: this.detail.title,
-      // email: this.business.email,
-      // neighborhood: this.business.neighborhood,
-    };
+  deleteCart(id:any){
+    this.totalBuys.splice(this.totalBuys.indexOf(this.buy), 1);    
   }
-
 }

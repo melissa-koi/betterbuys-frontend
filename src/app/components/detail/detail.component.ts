@@ -20,6 +20,13 @@ export class DetailComponent implements OnInit {
   submitted = false;
 
   details : any;
+
+  //CART
+  title: any;
+  quantity: any;
+  price: any;
+
+
   constructor(private dservice: DetailService, private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
@@ -40,7 +47,6 @@ export class DetailComponent implements OnInit {
           console.log(error);
         });
   }
-
 
 }
 

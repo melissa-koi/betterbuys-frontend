@@ -9,13 +9,19 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailComponent } from './components/detail/detail.component';
 import { CartComponent } from './components/cart/cart.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { AddressComponent } from './components/address/address.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BuysComponent,
     DetailComponent,
-    CartComponent
+    CartComponent,
+    HeaderComponent,
+    FooterComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,
