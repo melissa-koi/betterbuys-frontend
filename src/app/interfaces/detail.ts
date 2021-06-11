@@ -3,5 +3,6 @@ export interface Detail {
     image: '',
     description: '',
     quantity: '',
-    price: ''
+    price: '',
+    short_description: ''
 }

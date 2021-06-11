@@ -15,7 +15,8 @@ export class DetailComponent implements OnInit {
     image: '',
     description: '',
     quantity: '',
-    price: ''
+    price: '',
+    short_description: ''
   }
   submitted = false;
 
